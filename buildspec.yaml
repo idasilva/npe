@@ -10,7 +10,7 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build  --build-arg AWS_ACCOUNT_ID=${AWS_ACCOUNT_ID} -t $IMAGE_REPO_NAME:$(cat ./VERSION) .
+      - docker build  $IMAGE_REPO_NAME:$IMAGE_REPO_NAME -t $IMAGE_REPO_NAME:$(cat ./VERSION) .
       - docker tag $IMAGE_REPO_NAME:$(cat ./VERSION) $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME:$(cat ./VERSION)
   post_build:
     commands:
