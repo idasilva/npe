@@ -4,6 +4,9 @@ ARG AWS_ACCOUNT_ID
 
 FROM $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME as builder
 
+ARG IMAGE_REPO_NAME
+
+ARG AWS_ACCOUNT_ID
 
 RUN mkdir /build
 
