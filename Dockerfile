@@ -8,7 +8,7 @@ WORKDIR /build
 
 RUN go get github.com/gorilla/mux  && go get -u github.com/jinzhu/gorm &&  go build -o main .
 
-FROM alpine
+FROM golang:alpine
 
 RUN adduser -S -D -H -h /app appuser
 
