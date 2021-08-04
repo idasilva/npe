@@ -4,6 +4,7 @@ ARG AWS_ACCOUNT_ID
 
 FROM $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME as builder
 
+
 RUN mkdir /build
 
 ADD . /build/
@@ -12,7 +13,7 @@ WORKDIR /build
 
 RUN go get github.com/gorilla/mux  && go get -u github.com/jinzhu/gorm &&  go build -o main .
 
-FROM ${AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/${IMAGE_REPO_NAME}
+FROM $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME
 
 RUN adduser -S -D -H -h /app appuser
 
