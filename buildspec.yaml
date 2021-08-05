@@ -10,7 +10,7 @@ phases:
       -  aws codecommit get-file \
                         --repository-name config \
                         --commit-specifier main \
-                        --file-path config.yaml
+                        --file-path config.yaml \
                         -query fileContent --output text | base64 -d
   build:
     commands:
