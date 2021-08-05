@@ -7,7 +7,7 @@ phases:
     commands:
       -  echo Logging in to Amazon ECR...
       -  $(aws ecr get-login --no-include-email --region us-east-1)
-      -  aws codecommit get-file --repository-name config --commit-specifier main  --file-path config.yaml --query fileContent --output text | base64 -d
+      -  aws codecommit get-file --repository-name config --commit-specifier main  --file-path config.yaml --query fileContent --output text | base64 -d  > config.yaml
   build:
     commands:
       - echo Building the Docker image...
