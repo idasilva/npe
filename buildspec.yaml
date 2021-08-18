@@ -8,8 +8,8 @@ phases:
       -  echo Logging in to Amazon ECR...
       -  $(aws ecr get-login --no-include-email --region us-east-1)
       -  git clone https://github.com/idasilva/npe-config.git
-      -  mv nep-config/config ./config
-      -  rm nep-config
+      -  mv ./nep-config/config ./config
+      -  rm ./nep-config
   build:
     commands:
       - echo Building the Docker image...
