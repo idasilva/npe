@@ -1,4 +1,4 @@
-version: 0.1
+version: 0.2
 phases:
   install:
     commands:
@@ -13,7 +13,9 @@ phases:
       -  cd internal
       -  pwd
       -  ls
-      -  cd ./nep-config
+      -  cd nep-config
+      -  pwd
+      -  ls
       -  mv ./nep-config/config ./config &&  cd .. && rm -rf ../nep-config
   build:
     commands:
