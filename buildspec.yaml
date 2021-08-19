@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.1
 phases:
   install:
     commands:
@@ -10,10 +10,10 @@ phases:
       -  git clone https://github.com/idasilva/npe-config.git
       -  pwd
       -  ls
-  build:
-    commands:
       -  cd ./nep-config
       -  mv ./nep-config/config ./config &&  cd .. && rm -rf ../nep-config
+  build:
+    commands:
       - echo Building the Docker image...
       - docker build   -t $IMAGE_REPO_NAME:$(cat ./VERSION)  .
       - docker tag $IMAGE_REPO_NAME:$(cat ./VERSION) $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME:$(cat ./VERSION)
