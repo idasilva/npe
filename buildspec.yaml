@@ -7,13 +7,8 @@ phases:
     commands:
       -  echo Logging in to Amazon ECR...
       -  $(aws ecr get-login --no-include-email --region us-east-1)
-      -  git clone https://github.com/idasilva/npe-config.git
-      -  pwd
-      -  ls
-      -  cd internal
-      -  pwd
-      -  ls
-      -  cd nep-config
+      -  git clone https://github.com/idasilva/daigoro.git
+      -  cd daigoro
       -  pwd
       -  ls
       -  mv ./nep-config/config ./config &&  cd .. && rm -rf ../nep-config
