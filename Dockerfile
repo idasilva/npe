@@ -8,7 +8,7 @@ WORKDIR /build
 
 RUN go get github.com/gorilla/mux  && go get -u github.com/jinzhu/gorm &&  go build -o main .
 
-FROM  560978416398.dkr.ecr.us-east-1.amazonaws.com/config-repository
+FROM 560978416398.dkr.ecr.us-east-1.amazonaws.com/config-repository
 
 RUN adduser -S -D -H -h /app appuser
 
